@@ -33,3 +33,21 @@ setInterval(zazenAnimation, totalTime);
 // ボタンを押し10分経過するとポップアップ
 const button = document.getElementById("button")
 button.addEventListener("click", () => setTimeout(() => alert("10分経過しました。"), 600 * 1000));
+
+
+// オーディオ再生のエレメント取得
+const playButton1 = document.querySelector(".play1");
+const playButton2 = document.querySelector(".play2");
+const audio1 = document.querySelectorAll('audio')[0];
+const audio2 = document.querySelectorAll('audio')[1];
+
+// オーディオ再生関数
+
+const playAudio1 = () => {audio1.play()}
+const playAudio2 = () => {audio2.play()}
+// タイマーボタンを押すと再生
+button.addEventListener("click", playAudio1);
+button.addEventListener("click", playAudio2);
+
+// 10分経過後鐘が鳴る
+button.addEventListener("click", () => setTimeout(playAudio1, 600 * 1000));
