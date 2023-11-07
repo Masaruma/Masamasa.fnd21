@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>座禅アプリ</title>
+  <link rel="stylesheet" href="apppage.css">
+
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <h1 class="logo">座禅アプリ</h1>
+    </header>
+    
+    <div id="content-body">
+      <a href="index.html">メインページに戻る</a>
+      <audio controls autoplay src="./image/Bonsho04-1(Low).mp3"></audio>
+      <figcaption>BGM by OtoLogic(CC BY 4.0)</figcaption>
+      <audio controls loop src="./image/uguisu.mp3" type="audio/mp3">水が流れる音</audio>
+ 
+      <button id="button">10分タイマー</button>
+
+      
+      <div class="container">
+        <div class="circle"></div>
+        <p id="text"></p>
+        
+        <div class="pointer-container">
+          <div class="pointer"></div>
+        </div>
+        
+        <div class="outer-circle"></div>
+      </div>
+        
+    </div>
+  </div>
+  <script type="text/javascript" src="app.js"></script>
+  
+</body>
+</html>
+

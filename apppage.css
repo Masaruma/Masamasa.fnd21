@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+
+
+body {
+  font-family: 'Yuji Syuku', sans-serif;
+  height: 100vh;
+  background: url("./image/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+h1 {
+  letter-spacing: 0.3em;
+  font-weight: 400;
+}
+
+#header {
+  color:white;
+  letter-spacing: 0.3em;
+  border-bottom: 2px solid #c5d48b;
+  display: flex;
+  justify-content: center;
+
+}
+
+#content-body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:white;
+  position: relative;
+}
+
+a {
+  color:#d4908b;
+  font-size: 1.2em;
+}
+audio {
+  padding: 10px;  
+  top: 50px;
+  left: 0;
+  position: relative;
+}
+figcaption {
+  top: 40px;
+  left: 0;
+  position: relative;
+  font-size: 0.5em;
+}
+#button {
+  top: 60px;
+  left: 0;
+  position: relative;
+  font-family: 'Yuji Syuku', sans-serif;
+}
+
+
+/* 以下円を作成 */
+/* relativeに設定した円 */
+.container {
+  /* border: 3px solid black; */
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: scale(1);
+  z-index: 0;
+}
+/* 中心テキスト */
+#text {
+  font-size: 1.5rem;
+  position: absolute;
+  z-index: 0;
+}
+/* 内側の円 */
+.circle {
+  height: 100%;
+  width: 100%;
+  /* background-color: hsl(115, 51%, 13%); */
+  background: content-box radial-gradient(rgb(48, 69, 5), hsl(114, 21%, 29%));
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: -1;
+}
+/* 外周の円 */
+.outer-circle {
+  height: 344px;
+  width: 344px;
+  background: conic-gradient(
+    #96c04d calc(360deg * (7 / 20)),
+    #6d9b29 calc(360deg * (7 / 20)),
+    #718b29 360deg
+  );
+  position: absolute;
+  top: -22px;
+  left: -22px;
+  border-radius: 50%;
+  z-index: -2;
+  border: 1px solid  #415c0f;
+}
+
+/* 以下回転する円 */
+/* 円を中心に回転する円柱 */
+.pointer-container {
+  width: 20px;
+  height: 172px;
+  /* background-color: yellow; */
+  position: absolute;
+  top: -22px;
+  left: 140px;
+  transform-origin: bottom center;
+  animation: rotate 20000ms linear forwards infinite;
+}
+/* 外周円を回る円 */
+.pointer {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(208, 39, 39);
+  border-radius: 50%;
+  border: 1px solid  rgb(81, 2, 2);
+}
+/* 回転するアニメーション */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    
+  }
+} 
+
+
+/* 円を大きくする、縮ませるアニメーション */
+/* 大きくする */
+.container.grow {
+  animation: grow 7s linear forwards;
+}
+@keyframes grow {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+/* 小さくするアニメーション */
+.container.shrink {
+  animation: shrink 13s linear forwards;
+}
+@keyframes shrink {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
